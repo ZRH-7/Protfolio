@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout'
+import HireMe from '@/components/HireMe'
 import Head from 'next/head'
 import Image from 'next/image'
 import FrofilePic from '../../public/images/profile/developer-pic-1.png'
@@ -29,6 +30,7 @@ export default function Home() {
 						</div>
 					</div>
 				</Layout>
+				<HireMe />
 			</main>
 		</>
 	)
