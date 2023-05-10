@@ -3,6 +3,7 @@ import Head from "next/head"
 import { Skills } from "@/components/Skills"
 import { Experience } from "@/components/Experience"
 import { About } from "@/components/About"
+import { Education } from "@/components/Education"
 
 const about = () => {
     return (
@@ -17,6 +18,7 @@ const about = () => {
                     <About />
                     <Skills />
                     <Experience />
+                    <Education />
                 </Layout>
             </main>
         </>
