@@ -12,14 +12,14 @@ import Project4 from '../../public/images/projects/fashion-studio-website.jpg'
 import Project5 from '../../public/images/projects/agency-website-cover-image.jpg'
 import Project6 from '../../public/images/projects/devdreaming.jpg'
 
+const FreamerImage = motion(Image);
+
 const FeaturedProject = ({ type, title, summery, image, link, github }) => {
     return (
         <article className="relative flex w-full items-center  justify-between rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-12 shadow-2xl">
             <div className="absolute  top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div>
             <Link href={link} target="_blank" className="w-1/2 cursor-pointer overflow-hidden rounded-lg">
-                <motion.div whileHover={{ scale: 1.1, transition: { duration: 1 } }}>
-                    <Image src={image} alt={title} className="w-full h-auto" />
-                </motion.div>
+                <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} />
             </Link>
             <div className="w-1/2 flex flex-col items-start justify-between pl-6">
                 <span className="text-primary font-medium text-xl">{type}</span>
@@ -41,9 +41,7 @@ const Project = ({ title, type, image, link, github }) => {
         <article className="relative w-full rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-6 shadow-2xl">
             <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div>
             <Link href={link} target="_blank" className="w-full block cursor-pointer overflow-hidden rounded-lg">
-                <motion.div whileHover={{ scale: 1.1, transition: { duration: 1 } }}>
-                    <Image src={image} alt={title} className="w-full h-auto" />
-                </motion.div>
+                <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} />
             </Link>
             <div className="mt-4 flex w-full flex-col items-start justify-between">
                 <span className="text-primary font-medium text-xl">{type}</span>
