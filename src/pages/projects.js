@@ -16,8 +16,8 @@ const FreamerImage = motion(Image);
 
 const FeaturedProject = ({ type, title, summery, image, link, github }) => {
     return (
-        <article className="relative flex w-full items-center  justify-between rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-12 shadow-2xl">
-            <div className="absolute  top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div>
+        <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative flex w-full items-center  justify-between rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-12 shadow-2xl border-r-8 border-b-8">
+            {/* <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div> */}
             <Link href={link} target="_blank" className="w-1/2 cursor-pointer overflow-hidden rounded-lg">
                 <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} />
             </Link>
@@ -32,14 +32,14 @@ const FeaturedProject = ({ type, title, summery, image, link, github }) => {
                     <Link href={link} target="_blank" className="ml-4 rounded-lg bg-dark text-light py-2 px-6 font-semibold border-solid border-dark border-[2px] transition hover:text-dark hover:bg-light">Visit Project</Link>
                 </div>
             </div>
-        </article>
+        </motion.article>
     )
 }
 
 const Project = ({ title, type, image, link, github }) => {
     return (
-        <article className="relative w-full rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-6 shadow-2xl">
-            <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div>
+        <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative w-full rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-6 shadow-2xl border-r-8 border-b-8">
+            {/* <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div> */}
             <Link href={link} target="_blank" className="w-full block cursor-pointer overflow-hidden rounded-lg">
                 <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} />
             </Link>
@@ -53,7 +53,7 @@ const Project = ({ title, type, image, link, github }) => {
                     <Link href={github} target="_blank" className="w-10"><GithubIcon /></Link>
                 </div>
             </div>
-        </article>
+        </motion.article>
     )
 }
 
