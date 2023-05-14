@@ -70,6 +70,8 @@ const MovingImage = ({ title, image, link }) => {
                 style={{ x: x, y: y }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             />
         </Link>
     )

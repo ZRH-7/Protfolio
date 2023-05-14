@@ -41,7 +41,7 @@ export const About = () => {
                 </div>
                 <div className="relative col-span-3 h-max rounded-2xl border-2 border-solid border-dark  bg-light p-8 dark:border-light dark:bg-dark">
                     <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[102%]  rounded-[2rem] rounded-br-3xl bg-dark dark:bg-light"></div>
-                    <Image src={ProfilePic} alt="tCoderBD" className="w-full h-auto rounded-2xl" />
+                    <Image src={ProfilePic} alt="tCoderBD" className="w-full h-auto rounded-2xl" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" />
                 </div>
                 <div className="col-span-2 flex flex-col items-end justify-center gap-16 dark:text-white">
                     <div className="flex flex-col items-end justify-center">

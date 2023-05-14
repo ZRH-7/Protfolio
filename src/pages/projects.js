@@ -19,7 +19,7 @@ const FeaturedProject = ({ type, title, summery, image, link, github }) => {
         <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative flex w-full items-center  justify-between rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-12 shadow-2xl border-r-8 border-b-8 dark:border-light dark:bg-dark">
             {/* <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div> */}
             <Link href={link} target="_blank" className="w-1/2 cursor-pointer overflow-hidden rounded-lg">
-                <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} />
+                <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             </Link>
             <div className="w-1/2 flex flex-col items-start justify-between pl-6">
                 <span className="text-primary font-medium text-xl dark:text-primaryDark">{type}</span>
@@ -41,7 +41,7 @@ const Project = ({ title, type, image, link, github }) => {
         <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative w-full rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-6 shadow-2xl border-r-8 border-b-8 dark:border-light dark:bg-dark">
             {/* <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div> */}
             <Link href={link} target="_blank" className="w-full block cursor-pointer overflow-hidden rounded-lg">
-                <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} />
+                <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" />
             </Link>
             <div className="mt-4 flex w-full flex-col items-start justify-between">
                 <span className="text-primary font-medium text-xl dark:text-primaryDark">{type}</span>
