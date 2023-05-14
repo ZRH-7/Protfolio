@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { MoonIcon, SunIcon } from '../Icons'
 
-function DarkSwitcher() {
+function DarkSwitcher({ className }) {
     const [isDarkMode, setIsDarkMode] = useState(false)
 
     useEffect(() => {
@@ -28,7 +28,7 @@ function DarkSwitcher() {
 
     return (
         <button
-            className={`ml-4 w-6 h-6 flex items-center justify-center rounded-full p-1 ${isDarkMode ? "bg-light text-dark" : "bg-dark text-light"}`}
+            className={`ml-4 w-6 h-6 flex items-center justify-center rounded-full p-1 ${className} ${isDarkMode ? "bg-light text-dark" : "bg-dark text-light"}`}
             onClick={toggleDarkMode}
         >
             {
