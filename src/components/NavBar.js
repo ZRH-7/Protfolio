@@ -2,9 +2,9 @@ import Link from 'next/link';
 import React from 'react';
 import Logo from './Logo';
 import { useRouter } from 'next/router';
-import { DribbbleIcon, GithubIcon, LinkedInIcon, MoonIcon, PinterestIcon, SunIcon, TwitterIcon } from './Icons';
+import { DribbbleIcon, GithubIcon, LinkedInIcon, PinterestIcon, TwitterIcon } from './Icons';
 import { motion } from 'framer-motion';
-import { useThemeSwitcher } from './hooks/useThemeSwitcher';
+import DarkSwitcher from './hooks/useThemeSwitcher';
 
 const CustomLink = ({ href, title, className = "" }) => {
     const router = useRouter();
@@ -17,8 +17,6 @@ const CustomLink = ({ href, title, className = "" }) => {
 }
 
 const NavBar = () => {
-
-    const [mode, setMode] = useThemeSwitcher();
 
     return (
         <header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light'>
@@ -54,16 +52,8 @@ const NavBar = () => {
                     whileTap={{ scale: 0.9 }}
                     whileHover={{ y: -2 }}
                     href="/" target={"_blank"}><DribbbleIcon /></motion.a>
-                <button
-                    className={`ml-3 w-6 h-6 flex items-center justify-center rounded-full p-1 ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}`}
-                    onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
-                >
-                    {
-                        mode === 'dark' ?
-                            <SunIcon className={'fill-dark'} /> :
-                            <MoonIcon className={'fill-dark'} />
-                    }
-                </button>
+
+                <DarkSwitcher />
             </nav>
             <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
                 <Logo />

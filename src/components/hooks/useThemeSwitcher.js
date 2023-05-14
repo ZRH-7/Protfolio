@@ -1,49 +1,41 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { MoonIcon, SunIcon } from '../Icons'
 
-export const useThemeSwitcher = () => {
-    const preferDarkQuery = "(prefer-color-scheme: dark)";
-    const [mode, setMode] = useState("");
+function DarkSwitcher() {
+    const [isDarkMode, setIsDarkMode] = useState(false)
 
     useEffect(() => {
+        const preferredTheme = localStorage.getItem('theme')
 
-        const mediaQuery = window.matchMedia(preferDarkQuery);
-        const userPref = window.localStorage.getItem("theme");
-
-        const handleChange = () => {
-            if (userPref) {
-                let check = userPref === 'dark' ? 'dark' : 'light';
-                setMode(check);
-                if (check === 'dark') {
-                    document.documentElement.classList.add('dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                }
-            } else {
-                let check = mediaQuery.matches ? "dark" : "light";
-                setMode(check);
-                if (check === 'dark') {
-                    document.documentElement.classList.add('dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                }
-            }
+        if (preferredTheme === 'dark') {
+            setIsDarkMode(true)
         }
-
-        mediaQuery.addEventListener("change", handleChange);
-
-        return () => mediaQuery.removeEventListener("change", handleChange);
-
-    }, []);
+    }, [])
 
     useEffect(() => {
-        if (mode === "dark") {
-            window.localStorage.setItem("theme", "dark");
-            document.documentElement.classList.add('dark');
+        if (isDarkMode) {
+            document.documentElement.classList.add('dark')
+            localStorage.setItem('theme', 'dark')
         } else {
-            window.localStorage.setItem("theme", "light");
-            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.remove('dark')
+            localStorage.setItem('theme', 'light')
         }
-    }, [mode]);
+    }, [isDarkMode])
 
-    return [mode, setMode];
+    function toggleDarkMode() {
+        setIsDarkMode(!isDarkMode)
+    }
+
+    return (
+        <button
+            className={`ml-4 w-6 h-6 flex items-center justify-center rounded-full p-1 ${isDarkMode ? "bg-light text-dark" : "bg-dark text-light"}`}
+            onClick={toggleDarkMode}
+        >
+            {
+                isDarkMode ? <MoonIcon className={'fill-dark'} /> : <SunIcon className={'fill-dark'} />
+            }
+        </button>
+    )
 }
+
+export default DarkSwitcher

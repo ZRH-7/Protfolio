@@ -19,17 +19,17 @@ const FreamerImage = motion(Image);
 
 const FeaturedArticle = ({ image, title, time, summery, link }) => {
     return (
-        <li className='relative w-full rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-6 shadow-2xl'>
-            <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div>
+        <li className='relative w-full rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-6 shadow-2xl dark:bg-dark dark:border-light'>
+            <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark dark:bg-light"></div>
             <Link href={link} target="_blank" className="w-full block cursor-pointer overflow-hidden rounded-lg">
                 <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} />
             </Link>
             <div className="mt-4 flex w-full flex-col items-start justify-between">
                 <Link href={link} target="_blank" className="hover:underline">
-                    <h2 className="my-2 text-left w-full text-2xl font-bold">{title}</h2>
+                    <h2 className="my-2 text-left w-full text-2xl font-bold dark:text-light">{title}</h2>
                 </Link>
-                <p className='text-sm  mb-2'>{summery}</p>
-                <span className='text-primary font-semibold'>{time} min read</span>
+                <p className='text-sm mb-2 dark:text-light'>{summery}</p>
+                <span className='text-primary font-semibold dark:text-primaryDark'>{time} min read</span>
             </div>
         </li>
     )
@@ -61,7 +61,7 @@ const MovingImage = ({ title, image, link }) => {
             onMouseMove={hundleMouse}
             onMouseLeave={hundleMouseLeave}
         >
-            <h2 className='capitalize text-xl font-semibold hover:underline'>{title}</h2>
+            <h2 className='capitalize text-xl font-semibold hover:underline dark:text-light'>{title}</h2>
             <FreamerImage
                 ref={imgRef}
                 src={image}
@@ -81,10 +81,10 @@ const ArticleList = ({ image, title, date, link }) => {
             initial={{ y: 200 }}
             whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }}
             viewport={{ once: true }}
-            className='border border-dark rounded-xl p-4 py-6 w-full relative flex items-center justify-between bg-light text-dark border-r-4 border-b-4 my-4'
+            className='border border-dark rounded-xl p-4 py-6 w-full relative flex items-center justify-between bg-light text-dark border-r-4 border-b-4 my-4 dark:border-light dark:bg-dark dark:text-light'
         >
             <MovingImage image={image} title={title} link={link} />
-            <span className='text-primary font-semibold min-w-max pl-4'>{date}</span>
+            <span className='text-primary font-semibold min-w-max pl-4 dark:text-primaryDark'>{date}</span>
         </motion.li>
     )
 }
@@ -103,7 +103,7 @@ const articles = () => {
                         <FeaturedArticle image={article1} title='Build A Custom Pagination Component In Reactjs From Scratch' summery='Learn how to build a custom pagination component in ReactJS from scratch. Follow this step-by-step guide to integrate Pagination component in your ReactJS project.' time='9' link='/' />
                         <FeaturedArticle image={article2} title='Creating Stunning Loading Screens In React: Build 3 Types Of Loading Screens' summery='Learn how to create stunning loading screens in React with 3 different methods. Discover how to use React-Loading, React-Lottie & build a custom loading screen. Improve the user experience.' time='15' link='/' />
                     </ul>
-                    <h2 className='font-bold text-4xl text-center mt-32 mb-16'>All Articles</h2>
+                    <h2 className='font-bold text-4xl text-center mt-32 mb-16 dark:text-light'>All Articles</h2>
                     <ul>
                         <ArticleList image={image1} title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling" date="January 27, 2023" link="/" />
                         <ArticleList image={image2} title="Silky Smooth Scrolling In Reactjs: A Step-By-Step Guide For React Developers" date="January 30, 2023" link="/" />

@@ -16,20 +16,20 @@ const FreamerImage = motion(Image);
 
 const FeaturedProject = ({ type, title, summery, image, link, github }) => {
     return (
-        <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative flex w-full items-center  justify-between rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-12 shadow-2xl border-r-8 border-b-8">
+        <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative flex w-full items-center  justify-between rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-12 shadow-2xl border-r-8 border-b-8 dark:border-light dark:bg-dark">
             {/* <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div> */}
             <Link href={link} target="_blank" className="w-1/2 cursor-pointer overflow-hidden rounded-lg">
                 <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} />
             </Link>
             <div className="w-1/2 flex flex-col items-start justify-between pl-6">
-                <span className="text-primary font-medium text-xl">{type}</span>
+                <span className="text-primary font-medium text-xl dark:text-primaryDark">{type}</span>
                 <Link href={link} target="_blank" className="hover:underline">
-                    <h2 className="my-2 text-left w-full text-4xl font-bold">{title}</h2>
+                    <h2 className="my-2 text-left w-full text-4xl font-bold dark:text-light">{title}</h2>
                 </Link>
-                <p className="w-full my-2 font-medium text-dark">{summery}</p>
+                <p className="w-full my-2 font-medium text-dark dark:text-light">{summery}</p>
                 <div className="mt-2 flex items-center">
-                    <Link href={github} target="_blank" className="w-10"><GithubIcon /></Link>
-                    <Link href={link} target="_blank" className="ml-4 rounded-lg bg-dark text-light py-2 px-6 font-semibold border-solid border-dark border-[2px] transition hover:text-dark hover:bg-light">Visit Project</Link>
+                    <Link href={github} target="_blank" className="w-10"><GithubIcon className='dark:filter dark:brightness-100' /></Link>
+                    <Link href={link} target="_blank" className="ml-4 rounded-lg bg-dark text-light py-2 px-6 font-semibold border-solid border-dark border-[2px] transition hover:text-dark hover:bg-light dark:bg-light dark:text-dark dark:border-light dark:hover:text-light dark:hover:bg-dark">Visit Project</Link>
                 </div>
             </div>
         </motion.article>
@@ -38,18 +38,18 @@ const FeaturedProject = ({ type, title, summery, image, link, github }) => {
 
 const Project = ({ title, type, image, link, github }) => {
     return (
-        <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative w-full rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-6 shadow-2xl border-r-8 border-b-8">
+        <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative w-full rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-6 shadow-2xl border-r-8 border-b-8 dark:border-light dark:bg-dark">
             {/* <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div> */}
             <Link href={link} target="_blank" className="w-full block cursor-pointer overflow-hidden rounded-lg">
                 <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} />
             </Link>
             <div className="mt-4 flex w-full flex-col items-start justify-between">
-                <span className="text-primary font-medium text-xl">{type}</span>
+                <span className="text-primary font-medium text-xl dark:text-primaryDark">{type}</span>
                 <Link href={link} target="_blank" className="hover:underline">
-                    <h2 className="my-2 text-left w-full text-4xl font-bold">{title}</h2>
+                    <h2 className="my-2 text-left w-full text-4xl font-bold dark:text-light">{title}</h2>
                 </Link>
                 <div className="flex w-full items-center  justify-between">
-                    <Link href={link} target="_blank" className="text-lg font-medium underline hover:no-underline">Visit</Link>
+                    <Link href={link} target="_blank" className="text-lg font-medium underline hover:no-underline dark:text-light">Visit</Link>
                     <Link href={github} target="_blank" className="w-10"><GithubIcon /></Link>
                 </div>
             </div>
@@ -64,7 +64,7 @@ const projects = () => {
                 <title>Projects | tCoderBD</title>
                 <meta name="description" content="" />
             </Head>
-            <main className="w-full mb-16 flex flex-col items-center justify-center">
+            <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
                 <Layout className="py-16">
                     <AnimatedText className="!text-8xl mb-16" text='Imagination Trumps Knowledge!' />
                     <div className="grid grid-cols-12 gap-24">
