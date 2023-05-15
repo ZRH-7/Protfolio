@@ -10,6 +10,7 @@ const Details = ({ type, time, place, info }) => {
             initial={{ y: 50 }}
             whileInView={{ y: 0 }}
             transition={{ duration: 0.5, type: "spring" }}
+            viewport={{ once: true }}
         >
             <h3 className='capitalize font-bold text-2xl'>{type}</h3>
             <span className='capitalize font-medium text-dark/75 dark:text-light/75'>

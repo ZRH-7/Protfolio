@@ -5,9 +5,9 @@ import Layout from '@/components/Layout'
 const Footer = () => {
     return (
         <footer className='w-full border-t-2 border-solid border-dark font-medium text-lg dark:border-light'>
-            <Layout className='py-8 flex items-center justify-between dark:text-light'>
+            <Layout className='py-8 flex items-center justify-between dark:text-light lg:flex-col lg:py-6'>
                 <span>&copy; {new Date().getFullYear()} All Rights Reserved.</span>
-                <div className='flex items-center'>
+                <div className='flex items-center lg:py-2'>
                     Build with <span className='text-primary text-2xl px-2 dark:text-primaryDark'>&#9825;</span>
                     <Link href="http://tcoderbd.com" target='_blank' className='underline underline-offset-2 hover:no-underline'>tCoderBD</Link>
                 </div>
