@@ -12,14 +12,14 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
             transition={{ duration: 0.5, type: "spring" }}
             viewport={{ once: true }}
         >
-            <h3 className='capitalize font-bold text-2xl'>{position}
+            <h3 className='capitalize font-bold text-2xl sm:text-xl xs:text-lg'>{position}
                 &nbsp;
                 <a className='text-primary capitalize dark:text-primaryDark' target='_blank' href={companyLink}>@{company}</a>
             </h3>
-            <span className='capitalize font-medium text-dark/75 dark:text-light/75'>
+            <span className='capitalize font-medium text-dark/75 dark:text-light/75 xs:text-sm'>
                 {time} | {address}
             </span>
-            <p className='font-medium w-full'>{work}</p>
+            <p className='font-medium w-full md:text-sm'>{work}</p>
         </motion.div>
     </li>
 }
@@ -36,14 +36,14 @@ export const Experience = () => {
 
     return (
         <>
-            <div className='my-64'>
-                <h2 className='font-bold text-8xl w-full text-center mb-32 dark:text-light'>Experience</h2>
-                <div ref={ref} className='w-[75%] mx-auto relative'>
+            <div className='my-64 md:my-16'>
+                <h2 className='font-bold text-8xl w-full text-center mb-32 dark:text-light md:text-6xl md:mt-32 sm:text-5xl xs:text-4xl md:mb-16'>Experience</h2>
+                <div ref={ref} className='w-[75%] mx-auto relative lg:w-[90%] md:w-full'>
                     <motion.div
-                        className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-primaryDark dark:shadow-3xl'
+                        className='absolute left-9 top-0 w-[4px] md:w-[2px] md:left-[30px] xs:left-[20px] h-full bg-dark  origin-top  dark:bg-primaryDark dark:shadow-3xl'
                         style={{ scaleY: scrollYProgress }}
                     />
-                    <ul className='w-full flex flex-col items-start justify-between ml-4'>
+                    <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
                         <Details
                             position='Software Engineer'
                             company='Google'
