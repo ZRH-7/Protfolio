@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from './Logo';
 import { useRouter } from 'next/router';
 import { DribbbleIcon, GithubIcon, LinkedInIcon, PinterestIcon, TwitterIcon } from './Icons';
@@ -37,8 +37,25 @@ const NavBar = () => {
         setIsOpen(!isOpen);
     }
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const router = useRouter();
+
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollPosition(position);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const backgroundColor = scrollPosition > 50 ? 'bg-light dark:bg-dark shadow-md' : 'transparent';
+
     return (
-        <header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative lg:px-3'>
+        <header className={`w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light lg:px-3 sticky top-0 z-50 ${backgroundColor}`}>
 
             <button className='flex-col justify-center items-center hidden lg:flex' onClick={handleClick}>
                 <span className={`transition-all duration-300 ease-out bg-dark dark:bg-light block h-0.5 w-6 rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
@@ -128,7 +145,7 @@ const NavBar = () => {
                     : null
             }
 
-            <div className='absolute left-[50%] top-2 translate-x-[-50%] z-50 lg:top-0'>
+            <div className='absolute left-[50%] top-[3px] md:top-[-3px] translate-x-[-50%] z-50 lg:top-0'>
                 <Logo />
             </div>
 
