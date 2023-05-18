@@ -80,13 +80,13 @@ const MovingImage = ({ title, image, link }) => {
 const ArticleList = ({ image, title, date, link }) => {
     return (
         <motion.li
-            initial={{ y: 200 }}
+            initial={{ y: 100 }}
             whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }}
             viewport={{ once: true }}
-            className='border border-dark rounded-xl p-4 py-6 w-full relative flex items-center justify-between bg-light text-dark border-r-4 border-b-4 my-4 dark:border-light dark:bg-dark dark:text-light'
+            className='border border-dark rounded-xl p-4 py-6 w-full relative flex items-center justify-between bg-light text-dark border-r-4 border-b-4 my-4 dark:border-light dark:bg-dark dark:text-light md:flex-col md:items-start'
         >
             <MovingImage image={image} title={title} link={link} />
-            <span className='text-primary font-semibold min-w-max pl-4 dark:text-primaryDark'>{date}</span>
+            <span className='text-primary font-semibold min-w-max pl-4 dark:text-primaryDark md:mt-2 md:pl-0'>{date}</span>
         </motion.li>
     )
 }
@@ -100,8 +100,8 @@ const articles = () => {
             </Head>
             <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden'>
                 <Layout className='pt-16'>
-                    <AnimatedText text="Words Can Change The World!" className='!text-8xl mb-16' />
-                    <ul className='grid grid-cols-2 gap-16'>
+                    <AnimatedText text="Words Can Change The World!" className='!text-8xl mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl' />
+                    <ul className='grid grid-cols-2 gap-16 lg:grid-cols-1'>
                         <FeaturedArticle image={article1} title='Build A Custom Pagination Component In Reactjs From Scratch' summery='Learn how to build a custom pagination component in ReactJS from scratch. Follow this step-by-step guide to integrate Pagination component in your ReactJS project.' time='9' link='/' />
                         <FeaturedArticle image={article2} title='Creating Stunning Loading Screens In React: Build 3 Types Of Loading Screens' summery='Learn how to create stunning loading screens in React with 3 different methods. Discover how to use React-Loading, React-Lottie & build a custom loading screen. Improve the user experience.' time='15' link='/' />
                     </ul>

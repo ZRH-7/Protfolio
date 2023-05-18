@@ -16,15 +16,15 @@ const FreamerImage = motion(Image);
 
 const FeaturedProject = ({ type, title, summery, image, link, github }) => {
     return (
-        <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative flex w-full items-center  justify-between rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-12 shadow-2xl border-r-8 border-b-8 dark:border-light dark:bg-dark md:p-6 md:flex-col">
+        <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative flex w-full items-center  justify-between rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-12 shadow-2xl border-r-8 border-b-8 dark:border-light dark:bg-dark md:p-6 lg:flex-col lg:mb-10 lg">
             {/* <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div> */}
-            <Link href={link} target="_blank" className="w-1/2 cursor-pointer overflow-hidden rounded-lg md:w-full md:mb-5">
+            <Link href={link} target="_blank" className="w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full lg:mb-5">
                 <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             </Link>
-            <div className="w-1/2 flex flex-col items-start justify-between pl-6 md:w-full">
+            <div className="w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0">
                 <span className="text-primary font-medium text-xl dark:text-primaryDark">{type}</span>
                 <Link href={link} target="_blank" className="hover:underline">
-                    <h2 className="my-2 text-left w-full text-4xl font-bold dark:text-light">{title}</h2>
+                    <h2 className="my-2 text-left w-full text-4xl font-bold dark:text-light md:text-2xl">{title}</h2>
                 </Link>
                 <p className="w-full my-2 font-medium text-dark dark:text-light">{summery}</p>
                 <div className="mt-2 flex items-center">
@@ -38,7 +38,7 @@ const FeaturedProject = ({ type, title, summery, image, link, github }) => {
 
 const Project = ({ title, type, image, link, github }) => {
     return (
-        <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative w-full rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-6 shadow-2xl border-r-8 border-b-8 dark:border-light dark:bg-dark">
+        <motion.article initial={{ y: 200 }} viewport={{ once: true }} whileInView={{ y: 0, transition: { duration: 1, ease: "easeInOut" } }} className="relative w-full rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-6 shadow-2xl border-r-8 border-b-8 dark:border-light dark:bg-dark lg:mb-10">
             {/* <div className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark"></div> */}
             <Link href={link} target="_blank" className="w-full block cursor-pointer overflow-hidden rounded-lg">
                 <FreamerImage src={image} alt={title} className="w-full h-auto" whileHover={{ scale: 1.1, transition: { duration: 1 } }} priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" />
@@ -46,7 +46,7 @@ const Project = ({ title, type, image, link, github }) => {
             <div className="mt-4 flex w-full flex-col items-start justify-between">
                 <span className="text-primary font-medium text-xl dark:text-primaryDark">{type}</span>
                 <Link href={link} target="_blank" className="hover:underline">
-                    <h2 className="my-2 text-left w-full text-4xl font-bold dark:text-light">{title}</h2>
+                    <h2 className="my-2 text-left w-full text-4xl font-bold dark:text-light md:text-2xl">{title}</h2>
                 </Link>
                 <div className="flex w-full items-center  justify-between">
                     <Link href={link} target="_blank" className="text-lg font-medium underline hover:no-underline dark:text-light">Visit</Link>
@@ -67,7 +67,7 @@ const projects = () => {
             <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
                 <Layout className="py-16">
                     <AnimatedText className="!text-8xl mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl" text='Imagination Trumps Knowledge!' />
-                    <div className="grid grid-cols-12 gap-24 md:gap-12">
+                    <div className="grid grid-cols-12 gap-24 lg:block">
                         <div className="col-span-12">
                             <FeaturedProject
                                 title="Crypto Screener Application"
@@ -78,7 +78,7 @@ const projects = () => {
                                 github="/"
                             />
                         </div>
-                        <div className="col-span-6 md:col-span-12">
+                        <div className="col-span-6">
                             <Project
                                 title="NFT collection Website"
                                 image={Project3}
@@ -87,7 +87,7 @@ const projects = () => {
                                 github="/"
                             />
                         </div>
-                        <div className="col-span-6 md:col-span-12">
+                        <div className="col-span-6">
                             <Project
                                 title="Fashion Studio Website"
                                 image={Project4}
