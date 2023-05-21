@@ -11,6 +11,7 @@ import Project3 from '../../public/images/projects/nft-collection-website-cover-
 import Project4 from '../../public/images/projects/fashion-studio-website.jpg'
 import Project5 from '../../public/images/projects/agency-website-cover-image.jpg'
 import Project6 from '../../public/images/projects/devdreaming.jpg'
+import { TransitionEffect } from "@/components/TransitionEffect"
 
 const FreamerImage = motion(Image);
 
@@ -64,6 +65,7 @@ const projects = () => {
                 <title>Projects | tCoderBD</title>
                 <meta name="description" content="" />
             </Head>
+            <TransitionEffect />
             <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
                 <Layout className="py-16">
                     <AnimatedText className="!text-8xl mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl" text='Imagination Trumps Knowledge!' />
