@@ -13,6 +13,7 @@ import image3 from '../../public/images/articles/create modal component in react
 import image4 from '../../public/images/articles/todo list app built using react redux and framer motion.png'
 import image5 from '../../public/images/articles/What is Redux with easy explanation.png'
 import image6 from '../../public/images/articles/What is higher order component in React.jpg'
+import { TransitionEffect } from '@/components/TransitionEffect'
 
 
 const FreamerImage = motion(Image);
@@ -98,6 +99,7 @@ const articles = () => {
                 <title>Articles | tCoderBD</title>
                 <meta name="description" content="" />
             </Head>
+            <TransitionEffect />
             <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden'>
                 <Layout className='pt-16'>
                     <AnimatedText text="Words Can Change The World!" className='!text-8xl mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl' />

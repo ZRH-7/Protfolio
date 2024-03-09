@@ -4,6 +4,7 @@ import { Skills } from "@/components/Skills"
 import { Experience } from "@/components/Experience"
 import { About } from "@/components/About"
 import { Education } from "@/components/Education"
+import { TransitionEffect } from "@/components/TransitionEffect"
 
 const about = () => {
     return (
@@ -12,6 +13,8 @@ const about = () => {
                 <title>About | tCoderBD</title>
                 <meta name="description" content="" />
             </Head>
+
+            <TransitionEffect />
 
             <main className='flex w-full flex-col items-center justify-center'>
                 <Layout className="pt-16">
