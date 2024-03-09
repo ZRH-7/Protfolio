@@ -42,22 +42,22 @@ export const Education = () => {
                     />
                     <ul className='w-full flex flex-col items-start justify-between ml-4 dark:text-light'>
                         <Details
-                            type='Bachelor Of Science In Computer Science'
-                            place='Massachusetts Institute Of Technology (MIT)'
-                            time='2016-2020'
-                            info="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial Intelligence."
+                            type='Bachelor Of Science Electrical and Electronic Engineering (EEE)'
+                            place='IUBAT—International University of Business Agriculture and Technology'
+                            time='2021'
+                            info="The Bachelor of Science in Electrical and Electronic Engineering program provides a solid foundation in electrical and electronic principles, preparing students for successful careers in a wide range of industries. By combining theoretical knowledge, practical skills, and specialized expertise, graduates are equipped to contribute to the advancement of technology and address the evolving challenges in the field of engineering."
                         />
                         <Details
-                            type='Master Of Computer Science'
-                            place='Stanford University'
-                            time='2020-2022'
-                            info="Completed a master's project on deep learning, developing a new neural network architecture for natural language understanding."
+                            type='HSC – Higher Secondary School Certificate'
+                            place='Shahzadpur Govt. College'
+                            time='2013'
+                            info="The Higher Secondary School Certificate (HSC) is an essential qualification that signifies the completion of secondary education and acts as a bridge to higher education or vocational training. The program offers subject choices to suit students' interests and provides a platform to pursue various career paths. The HSC qualification is highly valued by educational institutions and employers, opening up opportunities for further academic and professional growth"
                         />
                         <Details
-                            type='Online Coursework'
-                            place='Coursera And EdX'
-                            time='2016-2020'
-                            info='Completed coursework in advanced topics such as Reinforcement Learning, Computer Vision, and Machine Learning Engineering.'
+                            type='SSC – Secondary School Certificate'
+                            place='Shahzadpur Pilot Model High School'
+                            time='2010'
+                            info='The Secondary School Certificate (SSC) is a crucial educational qualification that marks the completion of secondary education and acts as a stepping stone to higher education or vocational training. The program offers a range of subjects to foster a well-rounded education and prepares students for further academic pursuits or entry-level employment. The SSC qualification holds value for universities, colleges, and employers, providing students with opportunities for future growth and success.'
                         />
                     </ul>
                 </div>
